@@ -44,3 +44,13 @@ legend("bottomright", c("A", "B"), lty = 1, col = 2:3)
 
 plot(iris.svm, data = iris, Petal.Width ~ Petal.Length,
 slice = list(Sepal.Width = 3, Sepal.Length = 6))
+
+logit <- function(p) {
+  log(p/(1 - p))
+}
+a = sort(rules, by="lift")
+
+sample1.apriori <- apriori(data)
+inspect(sample1.apriori)
+sample1.apriori <- apriori(data, parameter=list(supp=0.5, conf=1.0), appearance=list(rhs=c("Survived=No", "Survived=Yes"),)
+plot(sample1.apriori,method="graph")
